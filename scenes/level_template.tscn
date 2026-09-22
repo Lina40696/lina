@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_level"]
+[ext_resource type="PackedScene" path="res://scenes/blocks/platform.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/blocks/goal.tscn" id="3"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_level")
+
+[node name="SpawnLev" type="Marker2D" parent="."]
+position = Vector2(0, 330)
+
+[node name="SpawnMira" type="Marker2D" parent="."]
+position = Vector2(-60, 330)
+
+[node name="Ground" parent="." instance=ExtResource("2")]
+position = Vector2(-200, 360)
+size = Vector2(1400, 100)
+
+[node name="WallLeft" parent="." instance=ExtResource("2")]
+position = Vector2(-220, -100)
+size = Vector2(20, 560)
+
+[node name="Goal" parent="." instance=ExtResource("3")]
+position = Vector2(1000, 220)
+size = Vector2(120, 140)

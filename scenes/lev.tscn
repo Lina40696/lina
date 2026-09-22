@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/lev.gd" id="1_lev"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lev"]
+size = Vector2(28, 56)
+
+[node name="Lev" type="CharacterBody2D"]
+script = ExtResource("1_lev")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lev")
+
+[node name="Body" type="Polygon2D" parent="."]
+color = Color(0.878, 0.478, 0.373, 1)
+polygon = PackedVector2Array(-14, -28, 14, -28, 14, 28, -14, 28)
+
+[node name="Nose" type="Polygon2D" parent="Body"]
+color = Color(1, 1, 1, 1)
+polygon = PackedVector2Array(6, -20, 14, -20, 14, -14, 6, -14)

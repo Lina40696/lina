@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/mira.gd" id="1_mira"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mira"]
+size = Vector2(26, 52)
+
+[node name="Mira" type="CharacterBody2D"]
+script = ExtResource("1_mira")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_mira")
+
+[node name="Body" type="Polygon2D" parent="."]
+color = Color(0.373, 0.788, 0.702, 1)
+polygon = PackedVector2Array(-13, -26, 13, -26, 13, 26, -13, 26)
+
+[node name="Nose" type="Polygon2D" parent="Body"]
+color = Color(1, 1, 1, 1)
+polygon = PackedVector2Array(5, -19, 13, -19, 13, -13, 5, -13)

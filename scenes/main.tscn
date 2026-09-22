@@ -1,0 +1,86 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="Script" path="res://scripts/level.gd" id="1_level"]
+[ext_resource type="PackedScene" path="res://scenes/blocks/platform.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/blocks/anchor_post.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/blocks/draw_zone.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/blocks/light_orb.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/blocks/anchor_hook.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://scenes/blocks/checkpoint.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://scenes/blocks/goal.tscn" id="8"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_level")
+
+[node name="SpawnLev" type="Marker2D" parent="."]
+position = Vector2(0, 330)
+
+[node name="SpawnMira" type="Marker2D" parent="."]
+position = Vector2(-60, 330)
+
+[node name="GroundStart" parent="." instance=ExtResource("2")]
+position = Vector2(-150, 360)
+size = Vector2(600, 80)
+
+[node name="GroundMiddle" parent="." instance=ExtResource("2")]
+position = Vector2(690, 360)
+size = Vector2(460, 80)
+
+[node name="GroundFar" parent="." instance=ExtResource("2")]
+position = Vector2(1550, 400)
+size = Vector2(550, 200)
+
+[node name="GroundEnd" parent="." instance=ExtResource("2")]
+position = Vector2(2400, 400)
+size = Vector2(600, 200)
+
+[node name="WallLeft" parent="." instance=ExtResource("2")]
+position = Vector2(-170, -50)
+size = Vector2(20, 500)
+
+[node name="WallRight" parent="." instance=ExtResource("2")]
+position = Vector2(3000, -50)
+size = Vector2(20, 500)
+
+[node name="Pillar" parent="." instance=ExtResource("2")]
+position = Vector2(900, 255)
+size = Vector2(90, 105)
+
+[node name="PostBridge" parent="." instance=ExtResource("3")]
+position = Vector2(720, 335)
+
+[node name="ZoneBridge" parent="." instance=ExtResource("4")]
+position = Vector2(420, 230)
+size = Vector2(300, 200)
+anchor_path = NodePath("../PostBridge")
+
+[node name="OrbMiddle" parent="." instance=ExtResource("5")]
+position = Vector2(800, 330)
+amount = 25.0
+respawn_time = 40.0
+
+[node name="OrbPillar" parent="." instance=ExtResource("5")]
+position = Vector2(945, 230)
+amount = 40.0
+respawn_time = 40.0
+
+[node name="HookMain" parent="." instance=ExtResource("6")]
+position = Vector2(1350, 80)
+
+[node name="PostFar" parent="." instance=ExtResource("3")]
+position = Vector2(2430, 375)
+
+[node name="ZoneFar" parent="." instance=ExtResource("4")]
+position = Vector2(2080, 270)
+size = Vector2(340, 200)
+anchor_path = NodePath("../PostFar")
+
+[node name="CheckpointA" parent="." instance=ExtResource("7")]
+position = Vector2(760, 330)
+
+[node name="CheckpointB" parent="." instance=ExtResource("7")]
+position = Vector2(1640, 370)
+
+[node name="Goal" parent="." instance=ExtResource("8")]
+position = Vector2(2690, 290)
+size = Vector2(120, 140)
