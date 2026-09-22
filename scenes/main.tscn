@@ -1,86 +1,117 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene format=3 uid="uid://botq6si4k6nlf"]
 
-[ext_resource type="Script" path="res://scripts/level.gd" id="1_level"]
+[ext_resource type="Script" uid="uid://2pwwn551d2cj" path="res://scripts/level.gd" id="1_level"]
 [ext_resource type="PackedScene" path="res://scenes/blocks/platform.tscn" id="2"]
 [ext_resource type="PackedScene" path="res://scenes/blocks/anchor_post.tscn" id="3"]
 [ext_resource type="PackedScene" path="res://scenes/blocks/draw_zone.tscn" id="4"]
 [ext_resource type="PackedScene" path="res://scenes/blocks/light_orb.tscn" id="5"]
 [ext_resource type="PackedScene" path="res://scenes/blocks/anchor_hook.tscn" id="6"]
 [ext_resource type="PackedScene" path="res://scenes/blocks/checkpoint.tscn" id="7"]
-[ext_resource type="PackedScene" path="res://scenes/blocks/goal.tscn" id="8"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node2D" unique_id=1500935197]
 script = ExtResource("1_level")
 
-[node name="SpawnLev" type="Marker2D" parent="."]
-position = Vector2(0, 330)
+[node name="SpawnLev" type="Marker2D" parent="." unique_id=158182025]
+position = Vector2(2308, 174)
 
-[node name="SpawnMira" type="Marker2D" parent="."]
-position = Vector2(-60, 330)
+[node name="SpawnMira" type="Marker2D" parent="." unique_id=383435939]
+position = Vector2(2253, 170)
 
-[node name="GroundStart" parent="." instance=ExtResource("2")]
+[node name="GroundStart" parent="." unique_id=684701716 instance=ExtResource("2")]
 position = Vector2(-150, 360)
 size = Vector2(600, 80)
 
-[node name="GroundMiddle" parent="." instance=ExtResource("2")]
-position = Vector2(690, 360)
-size = Vector2(460, 80)
-
-[node name="GroundFar" parent="." instance=ExtResource("2")]
-position = Vector2(1550, 400)
-size = Vector2(550, 200)
-
-[node name="GroundEnd" parent="." instance=ExtResource("2")]
-position = Vector2(2400, 400)
-size = Vector2(600, 200)
-
-[node name="WallLeft" parent="." instance=ExtResource("2")]
+[node name="WallLeft" parent="." unique_id=1610301055 instance=ExtResource("2")]
 position = Vector2(-170, -50)
 size = Vector2(20, 500)
 
-[node name="WallRight" parent="." instance=ExtResource("2")]
-position = Vector2(3000, -50)
-size = Vector2(20, 500)
-
-[node name="Pillar" parent="." instance=ExtResource("2")]
-position = Vector2(900, 255)
+[node name="Pillar" parent="." unique_id=1858583356 instance=ExtResource("2")]
+position = Vector2(1073, 343)
+scale = Vector2(3.4885654, 2.0798793)
 size = Vector2(90, 105)
 
-[node name="PostBridge" parent="." instance=ExtResource("3")]
+[node name="PostBridge" parent="." unique_id=2053947323 instance=ExtResource("3")]
 position = Vector2(720, 335)
 
-[node name="ZoneBridge" parent="." instance=ExtResource("4")]
+[node name="ZoneBridge" parent="." unique_id=1747427576 instance=ExtResource("4")]
 position = Vector2(420, 230)
-size = Vector2(300, 200)
 anchor_path = NodePath("../PostBridge")
 
-[node name="OrbMiddle" parent="." instance=ExtResource("5")]
-position = Vector2(800, 330)
-amount = 25.0
+[node name="OrbMiddle" parent="." unique_id=1821751148 instance=ExtResource("5")]
+position = Vector2(1112, 247)
+collision_layer = 0
+collision_mask = 4
 respawn_time = 40.0
 
-[node name="OrbPillar" parent="." instance=ExtResource("5")]
-position = Vector2(945, 230)
+[node name="OrbPillar" parent="." unique_id=730175290 instance=ExtResource("5")]
+position = Vector2(591, 252)
+collision_layer = 0
+collision_mask = 4
 amount = 40.0
 respawn_time = 40.0
 
-[node name="HookMain" parent="." instance=ExtResource("6")]
-position = Vector2(1350, 80)
+[node name="HookMain" parent="." unique_id=1587282552 instance=ExtResource("6")]
+position = Vector2(927, 71)
 
-[node name="PostFar" parent="." instance=ExtResource("3")]
-position = Vector2(2430, 375)
+[node name="CheckpointA" parent="." unique_id=1797476107 instance=ExtResource("7")]
+position = Vector2(1198, 282)
 
-[node name="ZoneFar" parent="." instance=ExtResource("4")]
-position = Vector2(2080, 270)
-size = Vector2(340, 200)
-anchor_path = NodePath("../PostFar")
+[node name="DrawZone" parent="." unique_id=159235934 instance=ExtResource("4")]
+position = Vector2(1416, 179)
+scale = Vector2(2.10487, 0.9508762)
 
-[node name="CheckpointA" parent="." instance=ExtResource("7")]
-position = Vector2(760, 330)
+[node name="Platform" parent="." unique_id=1297615785 instance=ExtResource("2")]
+position = Vector2(1079, 105)
 
-[node name="CheckpointB" parent="." instance=ExtResource("7")]
-position = Vector2(1640, 370)
+[node name="LightOrb" parent="." unique_id=812795831 instance=ExtResource("5")]
+position = Vector2(1170, 28)
+collision_layer = 0
+collision_mask = 4
 
-[node name="Goal" parent="." instance=ExtResource("8")]
-position = Vector2(2690, 290)
-size = Vector2(120, 140)
+[node name="LightOrb2" parent="." unique_id=1562848783 instance=ExtResource("5")]
+position = Vector2(1168, 30)
+collision_layer = 0
+collision_mask = 4
+
+[node name="LightOrb3" parent="." unique_id=975344858 instance=ExtResource("5")]
+position = Vector2(1173, 30)
+collision_layer = 0
+collision_mask = 4
+
+[node name="Platform2" parent="." unique_id=551278476 instance=ExtResource("2")]
+position = Vector2(2129.0002, 358)
+scale = Vector2(1.0590988, 10.68)
+
+[node name="Platform3" parent="." unique_id=1055868157 instance=ExtResource("2")]
+position = Vector2(2406, 557)
+scale = Vector2(1, 10.319998)
+
+[node name="Platform4" parent="." unique_id=1793021711 instance=ExtResource("2")]
+position = Vector2(2692, 780.00006)
+scale = Vector2(1, 9.24)
+
+[node name="Platform5" parent="." unique_id=1441644673 instance=ExtResource("2")]
+position = Vector2(2974, 914)
+scale = Vector2(1, 10.84)
+
+[node name="Platform6" parent="." unique_id=1406173923 instance=ExtResource("2")]
+position = Vector2(3280, 1051)
+scale = Vector2(1, 13)
+
+[node name="Checkpoint" parent="." unique_id=1879063716 instance=ExtResource("7")]
+position = Vector2(2188, 295)
+
+[node name="AnchorPost" parent="." unique_id=338955958 instance=ExtResource("3")]
+position = Vector2(2321, 314)
+
+[node name="AnchorHook" parent="." unique_id=1489767256 instance=ExtResource("6")]
+position = Vector2(2542, 77)
+
+[node name="AnchorHook2" parent="." unique_id=811164029 instance=ExtResource("6")]
+position = Vector2(3072, 72)
+
+[node name="AnchorHook3" parent="." unique_id=1299599330 instance=ExtResource("6")]
+position = Vector2(3559, 77)
+
+[node name="Platform7" parent="." unique_id=1414140678 instance=ExtResource("2")]
+position = Vector2(3544, 220)

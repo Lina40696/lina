@@ -8,7 +8,7 @@ extends Node
 #                      переключение клавишей switch_hero (Tab). Удобно для тестов.
 # solo_mode = false -> два человека на одной клавиатуре (эту схему менять нельзя).
 
-var solo_mode: bool = true
+var solo_mode: bool = false
 
 # Клавиши по умолчанию (physical keycode: не зависит от раскладки, работает и на русской).
 const DEFAULTS := {
@@ -96,8 +96,8 @@ func _rebuild() -> void:
 		_key("p1_throw", KEY_F)
 		_key("p1_release", KEY_G)
 		_key("p1_dash", KEY_SHIFT)
-		_key("p2_light", KEY_COMMA)
-		_key("p2_swap", KEY_M)
+		_key("p2_light", KEY_KP_0)
+		_key("p2_swap", KEY_KP_1)
 	_key("switch_hero", bindings.switch_hero)
 	_key("interact", bindings.interact)          # E: заговорить/использовать объект (общая для обоих героев)
 
